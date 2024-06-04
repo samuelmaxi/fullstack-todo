@@ -9,5 +9,9 @@ class Task(models.Model):
     max_length=250
   )
   
+  is_done = models.BooleanField(
+    default=False,
+  )
+  
   def __str__(self) -> str:
-    return self.name
+    return f"{self.name} - {self.is_done}"
