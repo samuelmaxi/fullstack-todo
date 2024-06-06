@@ -46,7 +46,8 @@ class TaskMethodsAPIView(APIView):
   def delete(self, request, id=None):
     try:
       queryset = Task.objects.get(id=id)
-      queryset.delete
+      queryset.delete()
+      return Response({"message":"succesor"},status=status.HTTP_200_OK)
     except Task.DoesNotExist:
       return Response(queryset.errors, status=status.HTTP_404_BAD_REQUEST)
     

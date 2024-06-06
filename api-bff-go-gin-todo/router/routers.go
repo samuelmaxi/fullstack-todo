@@ -15,6 +15,7 @@ func initializerRouters(router *gin.Engine) {
 		v1.GET("/task/search/:id", handlers.GetTaskSearch)
 		v1.POST("/task/create", handlers.PostTaskCreate)
 		v1.PATCH("/task/edit/:id", handlers.PatchTaskEdit)
+		v1.DELETE("/task/delete/:id", handlers.DeleteTaskDelete)
 	}
 
 }
