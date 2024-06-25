@@ -4,6 +4,6 @@ export type TaskProps ={
   isDone: boolean
 }
 
-export type TaskResponseProps ={
-  data:TaskProps[]
+export interface TaskResponseProps {
+  data: TaskProps[] |null
 }

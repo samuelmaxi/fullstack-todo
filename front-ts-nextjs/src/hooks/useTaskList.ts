@@ -1,5 +1,3 @@
-'use server'
-
 import { TaskProps, TaskResponseProps } from "@/types/Task";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios";
@@ -15,9 +13,11 @@ export function useTaskList(){
     queryKey: ['task-data']
   })
 
+  const task:TaskProps[]| any = query.data?.data
+
   return {
     ...query,
-    data: query.data
+    data: task
   }
 }
 
